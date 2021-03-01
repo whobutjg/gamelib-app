@@ -7,7 +7,7 @@ class GamesPage extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:4000/api/v1/games')
+    fetch('https://git.heroku.com/gamelibapijg.git/api/v1/games')
     .then((response) => response.json())
     .then((jsonData) => {
       // console.log(jsonData);
@@ -23,7 +23,7 @@ class GamesPage extends React.Component {
     let confirmed = window.confirm('Are you sure you want to delete this game?');
     if (confirmed) {
       console.log('Fire away!');
-      fetch(`http://localhost:4000/api/v1/games/${gameId}`, {
+      fetch(`https://git.heroku.com/gamelibapijg.git/api/v1/games/${gameId}`, {
         method: 'DELETE'
       })
       .then((response) => {
