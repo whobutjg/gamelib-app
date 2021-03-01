@@ -10,7 +10,7 @@ class EditGamePage extends React.Component {
 
   componentDidMount() {
     console.log('Getting Game')
-    fetch(`https://git.heroku.com/gamelibapijg.git/api/v1/games/${this.props.match.params.id}`)
+    fetch(`https://gamelibapijg.herokuapp.com/api/v1/games/${this.props.match.params.id}`)
     .then((response) => {
       console.log(response);
       return response.json();
@@ -30,7 +30,7 @@ class EditGamePage extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`https://git.heroku.com/gamelibapijg.git/api/v1/games/${this.props.match.params.id}`, {
+    fetch(`https://gamelibapijg.herokuapp.com/api/v1/games/${this.props.match.params.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
